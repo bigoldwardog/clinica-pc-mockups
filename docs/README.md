@@ -1,6 +1,6 @@
 # Mockups de la Clínica del PC
 
-Descarga [mockups.html](mockups.html) y ábrelo en el navegador. El prototipo usa datos ficticios. Los formularios simulan acciones en pantalla y las pantallas muestran ejemplos independientes.
+Descarga [mockups.html](mockups.html) y ábrelo en el navegador. El prototipo usa datos ficticios. La demo guarda el avance de una atención ficticia en el navegador, permite filtrar el panel y pide confirmar la prueba conjunta y la entrega antes del cierre. El panel muestra el estado de la orden de ejemplo OT-024.
 
 | Paso de la guía | Pantalla | Resultado esperado para validar con el cliente |
 | --- | --- | --- |
