@@ -24,3 +24,7 @@ Propuesta para una sesión de revisión con el docente o encargado. Estado pendi
 
 Usa el número de paso para vincular cada observación a la pantalla. Si se acuerda un cambio, registra la decisión y vincula el commit o la versión del mockup revisada.
 
+
+## Complemento al informe técnico
+
+Consulta [la propuesta de mejora](complemento-informe.md) para la justificación de Scrum, la matriz de requisitos y el registro de validación.
