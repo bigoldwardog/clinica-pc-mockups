@@ -133,27 +133,165 @@ body { background:#fff; }
 #clinica-pc .pc-steps b, #clinica-pc .pc-qr-direct { color:#222; }
 #clinica-pc .pc-qr-image { border-radius:2px; }
 </style>
+<style>
+#clinica-pc .pc-mobile-status { text-align:center; padding:24px 20px; }
+#clinica-pc .pc-mobile-status .pc-sub { margin:8px auto 16px; max-width:310px; }
+#clinica-pc .pc-mobile-status .pc-box { text-align:left; }
+#clinica-pc .pc-mobile-actions { display:grid; gap:8px; }
+#clinica-pc .pc-mobile-actions button, #clinica-pc .pc-mobile-form button { font:inherit; font-weight:700; cursor:pointer; min-height:44px; }
+#clinica-pc .pc-mobile-icon { display:grid; place-items:center; width:56px; height:56px; margin:0 auto 13px; border-radius:50%; background:#fff; border:1px solid var(--pc-line); font:700 26px/1 Arial,sans-serif; }
+#clinica-pc .pc-clock { position:relative; display:block; width:26px; height:26px; border:2px solid currentColor; border-radius:50%; }
+#clinica-pc .pc-clock::after { content:""; position:absolute; top:4px; left:10px; width:6px; height:8px; border-left:2px solid currentColor; border-bottom:2px solid currentColor; }
+#clinica-pc .pc-mobile-form .pc-input { width:100%; font:inherit; color:inherit; padding:6px; }
+#clinica-pc .pc-mobile-status .pc-mobile-details { margin:0; }
+#clinica-pc .pc-mobile-details dt { color:var(--pc-dim); font-size:12px; }
+#clinica-pc .pc-mobile-details dd { margin:0 0 8px; font-weight:700; overflow-wrap:anywhere; }
+#clinica-pc .pc-mobile-details dd:last-child { margin-bottom:0; }
+</style>
 <div id="clinica-pc" lang="es">
+<section id="cp-qr" data-mobile-screen>
 <div class="pc-shell pc-public">
 <header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
 <div class="pc-main">
 <div class="pc-kicker">Formulario del propietario</div>
-<h2>Inscripción de equipos</h2>
+<h2 tabindex="-1">Inscripción de equipos</h2>
 <p class="pc-sub">Completa tus datos y agrega los equipos que llevarás a la jornada.</p>
 <div class="pc-box"><h3>Datos del propietario</h3><div class="pc-grid">
-<div class="pc-field"><b>Nombre completo</b><span class="pc-input">Camila Soto</span></div>
+<div class="pc-field"><b>Nombre completo</b><span class="pc-input">Propietaria</span></div>
 <div class="pc-field"><b>RUT</b><span class="pc-input">99.999.991-3</span></div>
 <div class="pc-field"><b>Teléfono</b><span class="pc-input">+56 9 •••• 0142</span></div>
 <div class="pc-field"><b>Correo</b><span class="pc-input">camila@example.com</span></div>
 </div></div>
-<div class="pc-box"><h3>Equipo 1</h3><div class="pc-grid">
-<div class="pc-field"><b>Tipo de dispositivo</b><span class="pc-input">Notebook ▾</span></div>
-<div class="pc-field"><b>Marca y modelo</b><span class="pc-input">Lenovo ThinkPad T480</span></div>
+<form class="pc-mobile-form"><div class="pc-equipment-list"><div class="pc-box"><h3>Equipo 1</h3><div class="pc-grid">
+<label class="pc-field"><b>Tipo de dispositivo</b><select class="pc-input" required><option value="">Selecciona un tipo</option><option selected>Notebook</option><option>Computador de escritorio</option><option>Otro</option></select></label>
+<label class="pc-field"><b>Marca y modelo</b><input class="pc-input" required value="Lenovo ThinkPad T480"></label>
 </div></div>
-<div class="pc-row"><span class="pc-button">+ Agregar equipo</span><span class="pc-button pc-primary">Confirmar inscripción</span></div>
+</div><div class="pc-row"><button type="button" class="pc-button" data-add-equipment>+ Agregar equipo</button><button type="submit" class="pc-button pc-primary">Confirmar inscripción</button></div></form>
 </div>
 <footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
 </div>
+</section>
+<section id="cp-registro" data-mobile-screen hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-mobile-status">
+<div class="pc-mobile-icon" aria-hidden="true">✓</div>
+<h2 tabindex="-1">Inscripción confirmada</h2>
+<p class="pc-sub">Registramos tu inscripción. Guarda el número de orden para identificar tu equipo.</p>
+<div class="pc-box"><dl class="pc-mobile-details">
+<dt>Equipo</dt><dd data-mobile-equipment>Lenovo ThinkPad T480</dd>
+<dt>Orden</dt><dd data-mobile-order>OT-024</dd>
+</dl></div>
+<div class="pc-mobile-actions"><button type="button" class="pc-button pc-primary" data-mobile-view="cp-proceso">Revisar estado de mi equipo</button><button type="button" class="pc-button" data-mobile-view="cp-qr" data-reset-equipment>Inscribir otro equipo</button></div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-proceso" data-mobile-screen hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-mobile-status">
+<div class="pc-mobile-icon" aria-hidden="true"><span class="pc-clock"></span></div>
+<h2 tabindex="-1">Mantención en proceso</h2>
+<p class="pc-sub">El equipo técnico está trabajando en tu equipo.</p>
+<div class="pc-box"><dl class="pc-mobile-details">
+<dt>Equipo</dt><dd data-mobile-equipment>Lenovo ThinkPad T480</dd>
+<dt>Orden</dt><dd data-mobile-order>OT-024</dd>
+</dl></div>
+<div class="pc-mobile-actions"><button type="button" class="pc-button" data-mobile-view="cp-registro">Volver a la inscripción</button></div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-listo" data-mobile-screen hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-mobile-status">
+<div class="pc-mobile-icon" aria-hidden="true">✓</div>
+<h2 tabindex="-1">Listo para entrega</h2>
+<p class="pc-sub">Mantención confirmada. Tu equipo está listo para retiro.</p>
+<div class="pc-box"><dl class="pc-mobile-details">
+<dt>Equipo</dt><dd data-mobile-equipment>Lenovo ThinkPad T480</dd>
+<dt>Orden</dt><dd data-mobile-order>OT-024</dd>
+</dl></div>
+<div class="pc-mobile-actions"><button type="button" class="pc-button" data-mobile-view="cp-registro">Volver a la inscripción</button></div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
 </div>
 </main>
+<script>
+const mobileForm = document.querySelector('.pc-mobile-form')
+const equipmentList = mobileForm.querySelector('.pc-equipment-list')
+const equipmentTemplate = equipmentList.firstElementChild.cloneNode(true)
+const addEquipment = mobileForm.querySelector('[data-add-equipment]')
+const mobilePanels = [...document.querySelectorAll('[data-mobile-screen]')]
+let nextOrder = 24
+
+function blankEquipment(index) {
+  const equipment = equipmentTemplate.cloneNode(true)
+  equipment.querySelector('h3').textContent = 'Equipo ' + index
+  equipment.querySelector('select').value = ''
+  equipment.querySelector('input').value = ''
+  return equipment
+}
+
+addEquipment.addEventListener('click', () => {
+  const equipment = blankEquipment(equipmentList.children.length + 1)
+  equipmentList.append(equipment)
+  equipment.querySelector('select').focus()
+})
+
+function showMobileScreen(screen) {
+  if (typeof tabs !== 'undefined') {
+    select(tabs.find(tab => tab.getAttribute('aria-controls') === screen))
+  } else {
+    for (const panel of mobilePanels) panel.hidden = panel.id !== screen
+  }
+  document.getElementById(screen).querySelector('h2').focus()
+}
+
+function navigateMobile(screen) {
+  if (typeof tabs === 'undefined' && location.hash !== '#' + screen) {
+    location.hash = screen
+    return
+  }
+  showMobileScreen(screen)
+}
+
+if (typeof tabs === 'undefined') {
+  function restoreMobileScreen() {
+    const screen = mobilePanels.find(panel => '#' + panel.id === location.hash)
+    showMobileScreen(screen ? screen.id : 'cp-qr')
+  }
+  window.addEventListener('hashchange', restoreMobileScreen)
+  if (location.hash) restoreMobileScreen()
+}
+
+mobileForm.addEventListener('submit', event => {
+  event.preventDefault()
+  const equipment = [...equipmentList.querySelectorAll('input')].map(input => input.value.trim())
+  const orders = equipment.map(() => 'OT-' + String(nextOrder++).padStart(3, '0'))
+  document.querySelectorAll('[data-mobile-equipment]').forEach(item => {
+    item.textContent = item.closest('#cp-registro') ? equipment.join(' · ') : equipment[0]
+  })
+  document.querySelectorAll('[data-mobile-order]').forEach(item => {
+    item.textContent = item.closest('#cp-registro') ? orders.join(' · ') : orders[0]
+  })
+  navigateMobile('cp-registro')
+})
+
+document.querySelectorAll('[data-mobile-view]').forEach(button => {
+  button.addEventListener('click', () => {
+    const screen = button.dataset.mobileView
+    if (screen === 'cp-qr' && button.hasAttribute('data-reset-equipment')) {
+      equipmentList.replaceChildren(blankEquipment(1))
+    }
+    navigateMobile(screen)
+  })
+})
+</script>
 </html>

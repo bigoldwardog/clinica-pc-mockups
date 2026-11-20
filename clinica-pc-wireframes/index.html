@@ -133,6 +133,21 @@ body { background:#fff; }
 #clinica-pc .pc-steps b, #clinica-pc .pc-qr-direct { color:#222; }
 #clinica-pc .pc-qr-image { border-radius:2px; }
 </style>
+<style>
+#clinica-pc .pc-mobile-status { text-align:center; padding:24px 20px; }
+#clinica-pc .pc-mobile-status .pc-sub { margin:8px auto 16px; max-width:310px; }
+#clinica-pc .pc-mobile-status .pc-box { text-align:left; }
+#clinica-pc .pc-mobile-actions { display:grid; gap:8px; }
+#clinica-pc .pc-mobile-actions button, #clinica-pc .pc-mobile-form button { font:inherit; font-weight:700; cursor:pointer; min-height:44px; }
+#clinica-pc .pc-mobile-icon { display:grid; place-items:center; width:56px; height:56px; margin:0 auto 13px; border-radius:50%; background:#fff; border:1px solid var(--pc-line); font:700 26px/1 Arial,sans-serif; }
+#clinica-pc .pc-clock { position:relative; display:block; width:26px; height:26px; border:2px solid currentColor; border-radius:50%; }
+#clinica-pc .pc-clock::after { content:""; position:absolute; top:4px; left:10px; width:6px; height:8px; border-left:2px solid currentColor; border-bottom:2px solid currentColor; }
+#clinica-pc .pc-mobile-form .pc-input { width:100%; font:inherit; color:inherit; padding:6px; }
+#clinica-pc .pc-mobile-status .pc-mobile-details { margin:0; }
+#clinica-pc .pc-mobile-details dt { color:var(--pc-dim); font-size:12px; }
+#clinica-pc .pc-mobile-details dd { margin:0 0 8px; font-weight:700; overflow-wrap:anywhere; }
+#clinica-pc .pc-mobile-details dd:last-child { margin-bottom:0; }
+</style>
 <div id="clinica-pc" lang="es">
 <h1 style="font:700 21px Arial,sans-serif;margin:0 0 12px">Wireframes · Clínica del PC</h1>
 <div class="pc-preview nav nav-pills" role="tablist" aria-label="Pantallas de la propuesta">
@@ -142,12 +157,12 @@ body { background:#fff; }
 <button class="nav-link" type="button" role="tab" id="cp-tab-entrega" aria-controls="cp-entrega" aria-selected="false">Entrega y cierre</button>
 <button class="nav-link" type="button" role="tab" id="cp-tab-permisos" aria-controls="cp-permisos" aria-selected="false">Roles y permisos</button></div></div>
 <div class="pc-preview-group"><span class="pc-preview-label">Inscripción de equipos</span><div class="pc-preview-buttons"><button class="nav-link" type="button" role="tab" id="cp-tab-afiche" aria-controls="cp-afiche" aria-selected="false">Afiche con QR</button>
-<button class="nav-link" type="button" role="tab" id="cp-tab-qr" aria-controls="cp-qr" aria-selected="false">Formulario móvil</button></div></div>
+<button class="nav-link" type="button" role="tab" id="cp-tab-qr" aria-controls="cp-qr" aria-selected="false">Formulario móvil</button><button class="nav-link" type="button" role="tab" id="cp-tab-registro" aria-controls="cp-registro" aria-selected="false">Inscripción confirmada</button><button class="nav-link" type="button" role="tab" id="cp-tab-proceso" aria-controls="cp-proceso" aria-selected="false">Mantención en proceso</button><button class="nav-link" type="button" role="tab" id="cp-tab-listo" aria-controls="cp-listo" aria-selected="false">Listo para entrega</button></div></div>
 </div>
 
 <section id="cp-panel" role="tabpanel" aria-labelledby="cp-tab-panel">
 <div class="pc-shell">
-<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Andrea Molina</b><small>Superusuario</small></div><span class="pc-avatar" aria-hidden="true">AM</span></div></header>
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Pablo Pesce</b><small>Superusuario</small></div><span class="pc-avatar" aria-hidden="true">PP</span></div></header>
 <div class="pc-layout">
 <nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span class="on" aria-current="page">Atenciones del día</span><span>Recepción</span><span>Trabajo técnico</span><span>Entregas</span><span>Historial</span><span>Roles y permisos</span></nav>
 <div class="pc-main">
@@ -166,9 +181,9 @@ body { background:#fff; }
 </div>
 <div class="pc-box">
 <h3>Órdenes de trabajo</h3>
-<div class="pc-row pc-line"><div><b>OT-024 · Lenovo ThinkPad T480</b><p class="pc-muted">Camila Soto · Mantención lógica</p></div><span class="pc-status pc-amber">Pendiente de recepción</span></div>
-<div class="pc-row pc-line"><div><b>OT-023 · HP ProBook 440</b><p class="pc-muted">Diego Silva · Mantención física</p></div><span class="pc-status">En mantención</span></div>
-<div class="pc-row pc-line"><div><b>OT-022 · Acer Aspire 5</b><p class="pc-muted">Valentina Rojas · Formateo</p></div><span class="pc-status pc-green">Listo para entrega</span></div>
+<div class="pc-row pc-line"><div><b>OT-024 · Lenovo ThinkPad T480</b><p class="pc-muted">Propietaria · Mantención lógica</p></div><span class="pc-status pc-amber">Pendiente de recepción</span></div>
+<div class="pc-row pc-line"><div><b>OT-023 · HP ProBook 440</b><p class="pc-muted">Propietario · Mantención física</p></div><span class="pc-status">En mantención</span></div>
+<div class="pc-row pc-line"><div><b>OT-022 · Acer Aspire 5</b><p class="pc-muted">Propietaria · Formateo</p></div><span class="pc-status pc-green">Listo para entrega</span></div>
 </div>
 </div>
 </div>
@@ -192,24 +207,74 @@ body { background:#fff; }
 </div>
 </section>
 
-<section id="cp-qr" role="tabpanel" aria-labelledby="cp-tab-qr" hidden>
+<section id="cp-qr" data-mobile-screen role="tabpanel" aria-labelledby="cp-tab-qr" hidden>
 <div class="pc-shell pc-public">
 <header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
 <div class="pc-main">
 <div class="pc-kicker">Formulario del propietario</div>
-<h2>Inscripción de equipos</h2>
+<h2 tabindex="-1">Inscripción de equipos</h2>
 <p class="pc-sub">Completa tus datos y agrega los equipos que llevarás a la jornada.</p>
 <div class="pc-box"><h3>Datos del propietario</h3><div class="pc-grid">
-<div class="pc-field"><b>Nombre completo</b><span class="pc-input">Camila Soto</span></div>
+<div class="pc-field"><b>Nombre completo</b><span class="pc-input">Propietaria</span></div>
 <div class="pc-field"><b>RUT</b><span class="pc-input">99.999.991-3</span></div>
 <div class="pc-field"><b>Teléfono</b><span class="pc-input">+56 9 •••• 0142</span></div>
 <div class="pc-field"><b>Correo</b><span class="pc-input">camila@example.com</span></div>
 </div></div>
-<div class="pc-box"><h3>Equipo 1</h3><div class="pc-grid">
-<div class="pc-field"><b>Tipo de dispositivo</b><span class="pc-input">Notebook ▾</span></div>
-<div class="pc-field"><b>Marca y modelo</b><span class="pc-input">Lenovo ThinkPad T480</span></div>
+<form class="pc-mobile-form"><div class="pc-equipment-list"><div class="pc-box"><h3>Equipo 1</h3><div class="pc-grid">
+<label class="pc-field"><b>Tipo de dispositivo</b><select class="pc-input" required><option value="">Selecciona un tipo</option><option selected>Notebook</option><option>Computador de escritorio</option><option>Otro</option></select></label>
+<label class="pc-field"><b>Marca y modelo</b><input class="pc-input" required value="Lenovo ThinkPad T480"></label>
 </div></div>
-<div class="pc-row"><span class="pc-button">+ Agregar equipo</span><span class="pc-button pc-primary">Confirmar inscripción</span></div>
+</div><div class="pc-row"><button type="button" class="pc-button" data-add-equipment>+ Agregar equipo</button><button type="submit" class="pc-button pc-primary">Confirmar inscripción</button></div></form>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+<section id="cp-registro" data-mobile-screen role="tabpanel" aria-labelledby="cp-tab-registro" hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-mobile-status">
+<div class="pc-mobile-icon" aria-hidden="true">✓</div>
+<h2 tabindex="-1">Inscripción confirmada</h2>
+<p class="pc-sub">Registramos tu inscripción. Guarda el número de orden para identificar tu equipo.</p>
+<div class="pc-box"><dl class="pc-mobile-details">
+<dt>Equipo</dt><dd data-mobile-equipment>Lenovo ThinkPad T480</dd>
+<dt>Orden</dt><dd data-mobile-order>OT-024</dd>
+</dl></div>
+<div class="pc-mobile-actions"><button type="button" class="pc-button pc-primary" data-mobile-view="cp-proceso">Revisar estado de mi equipo</button><button type="button" class="pc-button" data-mobile-view="cp-qr" data-reset-equipment>Inscribir otro equipo</button></div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-proceso" data-mobile-screen role="tabpanel" aria-labelledby="cp-tab-proceso" hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-mobile-status">
+<div class="pc-mobile-icon" aria-hidden="true"><span class="pc-clock"></span></div>
+<h2 tabindex="-1">Mantención en proceso</h2>
+<p class="pc-sub">El equipo técnico está trabajando en tu equipo.</p>
+<div class="pc-box"><dl class="pc-mobile-details">
+<dt>Equipo</dt><dd data-mobile-equipment>Lenovo ThinkPad T480</dd>
+<dt>Orden</dt><dd data-mobile-order>OT-024</dd>
+</dl></div>
+<div class="pc-mobile-actions"><button type="button" class="pc-button" data-mobile-view="cp-registro">Volver a la inscripción</button></div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-listo" data-mobile-screen role="tabpanel" aria-labelledby="cp-tab-listo" hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-mobile-status">
+<div class="pc-mobile-icon" aria-hidden="true">✓</div>
+<h2 tabindex="-1">Listo para entrega</h2>
+<p class="pc-sub">Mantención confirmada. Tu equipo está listo para retiro.</p>
+<div class="pc-box"><dl class="pc-mobile-details">
+<dt>Equipo</dt><dd data-mobile-equipment>Lenovo ThinkPad T480</dd>
+<dt>Orden</dt><dd data-mobile-order>OT-024</dd>
+</dl></div>
+<div class="pc-mobile-actions"><button type="button" class="pc-button" data-mobile-view="cp-registro">Volver a la inscripción</button></div>
 </div>
 <footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
 </div>
@@ -217,7 +282,7 @@ body { background:#fff; }
 
 <section id="cp-recepcion" role="tabpanel" aria-labelledby="cp-tab-recepcion" hidden>
 <div class="pc-shell">
-<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Martín Reyes</b><small>Apoyo técnico</small></div><span class="pc-avatar" aria-hidden="true">MR</span></div></header>
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Apoyo técnico</b><small>Apoyo técnico</small></div><span class="pc-avatar" aria-hidden="true">AT</span></div></header>
 <div class="pc-layout">
 <nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span class="on" aria-current="page">Recepción</span><span>Trabajo técnico</span></nav>
 <div class="pc-main">
@@ -247,17 +312,17 @@ body { background:#fff; }
 
 <section id="cp-trabajo" role="tabpanel" aria-labelledby="cp-tab-trabajo" hidden>
 <div class="pc-shell">
-<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Martín Reyes</b><small>Apoyo técnico</small></div><span class="pc-avatar" aria-hidden="true">MR</span></div></header>
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Apoyo técnico</b><small>Apoyo técnico</small></div><span class="pc-avatar" aria-hidden="true">AT</span></div></header>
 <div class="pc-layout">
 <nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span>Recepción</span><span class="on" aria-current="page">Trabajo técnico</span></nav>
 <div class="pc-main">
 <div class="pc-kicker">Atenciones del día / OT-024</div>
 <div class="pc-heading"><h2>Trabajo técnico</h2><span class="pc-status">En mantención</span></div>
-<p class="pc-sub">Lenovo ThinkPad T480 · Camila Soto</p>
+<p class="pc-sub">Lenovo ThinkPad T480 · Propietaria</p>
 <div class="pc-steps"><span>Recepción registrada</span><b>Checklist y observaciones</b><span>Entrega y cierre</span></div>
 <div class="pc-box pc-check-sheet">
 <div class="pc-row"><h3>Checklist · Restauración y mantención lógica</h3><span class="pc-status">OT-024</span></div>
-<dl class="pc-check-id"><div><dt>Fecha</dt><dd>20/11/2026</dd></div><div><dt>Propietaria</dt><dd>Camila Soto</dd></div><div><dt>Equipo</dt><dd>Lenovo ThinkPad T480</dd></div><div><dt>Técnico</dt><dd>Martín Reyes</dd></div></dl>
+<dl class="pc-check-id"><div><dt>Fecha</dt><dd>20/11/2026</dd></div><div><dt>Propietaria</dt><dd>Propietaria</dd></div><div><dt>Equipo</dt><dd>Lenovo ThinkPad T480</dd></div><div><dt>Técnico</dt><dd>Apoyo técnico</dd></div></dl>
 <details class="pc-check-group" open><summary>Preparación <span>2 ítems</span></summary><table aria-label="Preparación"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row">Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente</th><td><input type="radio" name="check-0-0" aria-label="Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente · Sí" checked></td><td><input type="radio" name="check-0-0" aria-label="Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente · No"></td><td><input type="radio" name="check-0-0" aria-label="Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente · N/A"></td></tr><tr><th scope="row">Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO)</th><td><input type="radio" name="check-0-1" aria-label="Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO) · Sí"></td><td><input type="radio" name="check-0-1" aria-label="Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO) · No"></td><td><input type="radio" name="check-0-1" aria-label="Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO) · N/A"></td></tr></tbody></table></details>
 <details class="pc-check-group" open><summary>Verificación <span>14 ítems</span></summary><table aria-label="Verificación"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">VER-01</b> Verificar que el equipo encienda</th><td><input type="radio" name="check-1-0" aria-label="VER-01 · Sí" checked></td><td><input type="radio" name="check-1-0" aria-label="VER-01 · No"></td><td><input type="radio" name="check-1-0" aria-label="VER-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-02</b> Verificar que las luces del equipo enciendan según corresponda</th><td><input type="radio" name="check-1-1" aria-label="VER-02 · Sí" checked></td><td><input type="radio" name="check-1-1" aria-label="VER-02 · No"></td><td><input type="radio" name="check-1-1" aria-label="VER-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-03</b> Verificar que el arranque / boot del equipo sea adecuado</th><td><input type="radio" name="check-1-2" aria-label="VER-03 · Sí"></td><td><input type="radio" name="check-1-2" aria-label="VER-03 · No"></td><td><input type="radio" name="check-1-2" aria-label="VER-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-04</b> Verificar disponibilidad de conexión a internet</th><td><input type="radio" name="check-1-3" aria-label="VER-04 · Sí"></td><td><input type="radio" name="check-1-3" aria-label="VER-04 · No"></td><td><input type="radio" name="check-1-3" aria-label="VER-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-05</b> Iniciar sesión en el equipo con las credenciales provistas</th><td><input type="radio" name="check-1-4" aria-label="VER-05 · Sí"></td><td><input type="radio" name="check-1-4" aria-label="VER-05 · No"></td><td><input type="radio" name="check-1-4" aria-label="VER-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-06</b> Identificar ejecución de software de inicio/en segundo plano (Bloatware)</th><td><input type="radio" name="check-1-5" aria-label="VER-06 · Sí"></td><td><input type="radio" name="check-1-5" aria-label="VER-06 · No"></td><td><input type="radio" name="check-1-5" aria-label="VER-06 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-07</b> Identificar nombre, tipo, y versión del SO</th><td><input type="radio" name="check-1-6" aria-label="VER-07 · Sí"></td><td><input type="radio" name="check-1-6" aria-label="VER-07 · No"></td><td><input type="radio" name="check-1-6" aria-label="VER-07 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-08</b> Identificar licencias, credenciales y/o contratos referentes al SO</th><td><input type="radio" name="check-1-7" aria-label="VER-08 · Sí"></td><td><input type="radio" name="check-1-7" aria-label="VER-08 · No"></td><td><input type="radio" name="check-1-7" aria-label="VER-08 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-09</b> Identificar actualizaciones, parches disponibles del SO</th><td><input type="radio" name="check-1-8" aria-label="VER-09 · Sí"></td><td><input type="radio" name="check-1-8" aria-label="VER-09 · No"></td><td><input type="radio" name="check-1-8" aria-label="VER-09 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-10</b> Identificar actualizaciones, parches, drivers disponibles de los dispositivos</th><td><input type="radio" name="check-1-9" aria-label="VER-10 · Sí"></td><td><input type="radio" name="check-1-9" aria-label="VER-10 · No"></td><td><input type="radio" name="check-1-9" aria-label="VER-10 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-11</b> Verificar respaldos anteriores del usuario</th><td><input type="radio" name="check-1-10" aria-label="VER-11 · Sí"></td><td><input type="radio" name="check-1-10" aria-label="VER-11 · No"></td><td><input type="radio" name="check-1-10" aria-label="VER-11 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-12</b> Crear respaldo en caso de que no exista</th><td><input type="radio" name="check-1-11" aria-label="VER-12 · Sí"></td><td><input type="radio" name="check-1-11" aria-label="VER-12 · No"></td><td><input type="radio" name="check-1-11" aria-label="VER-12 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-13</b> Verificar que el respaldo disponible sea legible y/o restaurable</th><td><input type="radio" name="check-1-12" aria-label="VER-13 · Sí"></td><td><input type="radio" name="check-1-12" aria-label="VER-13 · No"></td><td><input type="radio" name="check-1-12" aria-label="VER-13 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-14</b> Identificar ubicación del respaldo (partición de disco duro o nube)</th><td><input type="radio" name="check-1-13" aria-label="VER-14 · Sí"></td><td><input type="radio" name="check-1-13" aria-label="VER-14 · No"></td><td><input type="radio" name="check-1-13" aria-label="VER-14 · N/A"></td></tr></tbody></table></details>
 <details class="pc-check-group"><summary>Restauración <span>13 ítems</span></summary><table aria-label="Restauración"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">RES-01</b> Desconectar el equipo de la red wifi/ethernet</th><td><input type="radio" name="check-2-0" aria-label="RES-01 · Sí"></td><td><input type="radio" name="check-2-0" aria-label="RES-01 · No"></td><td><input type="radio" name="check-2-0" aria-label="RES-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-02</b> Conectar la unidad extraíble con la imagen de SO y reiniciar el equipo</th><td><input type="radio" name="check-2-1" aria-label="RES-02 · Sí"></td><td><input type="radio" name="check-2-1" aria-label="RES-02 · No"></td><td><input type="radio" name="check-2-1" aria-label="RES-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-03</b> Ingresar al entorno BIOS/UEFI</th><td><input type="radio" name="check-2-2" aria-label="RES-03 · Sí"></td><td><input type="radio" name="check-2-2" aria-label="RES-03 · No"></td><td><input type="radio" name="check-2-2" aria-label="RES-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-04</b> Modificar el orden de arranque para iniciar desde el medio de instalación</th><td><input type="radio" name="check-2-3" aria-label="RES-04 · Sí"></td><td><input type="radio" name="check-2-3" aria-label="RES-04 · No"></td><td><input type="radio" name="check-2-3" aria-label="RES-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-05</b> Aplicar cambios realizados y salir de la BIOS</th><td><input type="radio" name="check-2-4" aria-label="RES-05 · Sí"></td><td><input type="radio" name="check-2-4" aria-label="RES-05 · No"></td><td><input type="radio" name="check-2-4" aria-label="RES-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-06</b> Iniciar instalación del SO</th><td><input type="radio" name="check-2-5" aria-label="RES-06 · Sí"></td><td><input type="radio" name="check-2-5" aria-label="RES-06 · No"></td><td><input type="radio" name="check-2-5" aria-label="RES-06 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-07</b> Ingresar clave de producto</th><td><input type="radio" name="check-2-6" aria-label="RES-07 · Sí"></td><td><input type="radio" name="check-2-6" aria-label="RES-07 · No"></td><td><input type="radio" name="check-2-6" aria-label="RES-07 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-08</b> Seleccionar distribución del teclado</th><td><input type="radio" name="check-2-7" aria-label="RES-08 · Sí"></td><td><input type="radio" name="check-2-7" aria-label="RES-08 · No"></td><td><input type="radio" name="check-2-7" aria-label="RES-08 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-09</b> Seleccionar edición de SO según preferencia del cliente (edición almacenada en imagen)</th><td><input type="radio" name="check-2-8" aria-label="RES-09 · Sí"></td><td><input type="radio" name="check-2-8" aria-label="RES-09 · No"></td><td><input type="radio" name="check-2-8" aria-label="RES-09 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-10</b> Eliminar particiones existentes</th><td><input type="radio" name="check-2-9" aria-label="RES-10 · Sí"></td><td><input type="radio" name="check-2-9" aria-label="RES-10 · No"></td><td><input type="radio" name="check-2-9" aria-label="RES-10 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-11</b> Crear partición nueva en formato NTFS (Windows)</th><td><input type="radio" name="check-2-10" aria-label="RES-11 · Sí"></td><td><input type="radio" name="check-2-10" aria-label="RES-11 · No"></td><td><input type="radio" name="check-2-10" aria-label="RES-11 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-12</b> Asignar partición principal para instalación de SO e instalar</th><td><input type="radio" name="check-2-11" aria-label="RES-12 · Sí"></td><td><input type="radio" name="check-2-11" aria-label="RES-12 · No"></td><td><input type="radio" name="check-2-11" aria-label="RES-12 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-13</b> Reiniciar el equipo</th><td><input type="radio" name="check-2-12" aria-label="RES-13 · Sí"></td><td><input type="radio" name="check-2-12" aria-label="RES-13 · No"></td><td><input type="radio" name="check-2-12" aria-label="RES-13 · N/A"></td></tr></tbody></table></details>
@@ -278,13 +343,13 @@ body { background:#fff; }
 
 <section id="cp-entrega" role="tabpanel" aria-labelledby="cp-tab-entrega" hidden>
 <div class="pc-shell">
-<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Sofía López</b><small>Coordinación de entregas</small></div><span class="pc-avatar" aria-hidden="true">SL</span></div></header>
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Coordinación de entregas</b><small>Coordinación de entregas</small></div><span class="pc-avatar" aria-hidden="true">CE</span></div></header>
 <div class="pc-layout">
 <nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span class="on" aria-current="page">Entregas</span></nav>
 <div class="pc-main">
 <div class="pc-kicker">Atenciones del día / OT-024</div>
 <div class="pc-heading"><h2>Entrega y cierre</h2><span class="pc-status pc-green">Listo para entrega</span></div>
-<p class="pc-sub">Lenovo ThinkPad T480 · Camila Soto</p>
+<p class="pc-sub">Lenovo ThinkPad T480 · Propietaria</p>
 <div class="pc-steps"><span>Recepción registrada</span><span>Trabajo verificado</span><b>Entrega y cierre</b></div>
 <div class="pc-box"><h3>Contacto con el propietario</h3><div class="pc-grid">
 <div class="pc-field"><b>Canal y contacto</b><span class="pc-input">Llamada · +56 9 •••• 0142</span></div>
@@ -299,7 +364,7 @@ body { background:#fff; }
 </section>
 <section id="cp-permisos" role="tabpanel" aria-labelledby="cp-tab-permisos" hidden>
 <div class="pc-shell">
-<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Andrea Molina</b><small>Superusuario</small></div><span class="pc-avatar" aria-hidden="true">AM</span></div></header>
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Pablo Pesce</b><small>Superusuario</small></div><span class="pc-avatar" aria-hidden="true">PP</span></div></header>
 <div class="pc-layout">
 <nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span>Recepción</span><span>Trabajo técnico</span><span>Entregas</span><span>Historial</span><span class="on" aria-current="page">Roles y permisos</span></nav>
 <div class="pc-main">
@@ -326,7 +391,7 @@ body { background:#fff; }
 <div class="pc-box">
 <h3>Asignar rol a una cuenta</h3>
 <div class="pc-row">
-<div class="pc-field"><b>Cuenta</b><span class="pc-input">Martín Reyes ▾</span></div>
+<div class="pc-field"><b>Cuenta</b><span class="pc-input">Apoyo técnico ▾</span></div>
 <div class="pc-field"><b>Rol</b><span class="pc-input">Apoyo técnico ▾</span></div>
 <span class="pc-button">Asignar rol</span>
 </div>
@@ -366,6 +431,77 @@ tabs.forEach((tab, index) => {
     const target = tabs[targets[event.key]]
     select(target)
     target.focus()
+  })
+})
+</script>
+<script>
+const mobileForm = document.querySelector('.pc-mobile-form')
+const equipmentList = mobileForm.querySelector('.pc-equipment-list')
+const equipmentTemplate = equipmentList.firstElementChild.cloneNode(true)
+const addEquipment = mobileForm.querySelector('[data-add-equipment]')
+const mobilePanels = [...document.querySelectorAll('[data-mobile-screen]')]
+let nextOrder = 24
+
+function blankEquipment(index) {
+  const equipment = equipmentTemplate.cloneNode(true)
+  equipment.querySelector('h3').textContent = 'Equipo ' + index
+  equipment.querySelector('select').value = ''
+  equipment.querySelector('input').value = ''
+  return equipment
+}
+
+addEquipment.addEventListener('click', () => {
+  const equipment = blankEquipment(equipmentList.children.length + 1)
+  equipmentList.append(equipment)
+  equipment.querySelector('select').focus()
+})
+
+function showMobileScreen(screen) {
+  if (typeof tabs !== 'undefined') {
+    select(tabs.find(tab => tab.getAttribute('aria-controls') === screen))
+  } else {
+    for (const panel of mobilePanels) panel.hidden = panel.id !== screen
+  }
+  document.getElementById(screen).querySelector('h2').focus()
+}
+
+function navigateMobile(screen) {
+  if (typeof tabs === 'undefined' && location.hash !== '#' + screen) {
+    location.hash = screen
+    return
+  }
+  showMobileScreen(screen)
+}
+
+if (typeof tabs === 'undefined') {
+  function restoreMobileScreen() {
+    const screen = mobilePanels.find(panel => '#' + panel.id === location.hash)
+    showMobileScreen(screen ? screen.id : 'cp-qr')
+  }
+  window.addEventListener('hashchange', restoreMobileScreen)
+  if (location.hash) restoreMobileScreen()
+}
+
+mobileForm.addEventListener('submit', event => {
+  event.preventDefault()
+  const equipment = [...equipmentList.querySelectorAll('input')].map(input => input.value.trim())
+  const orders = equipment.map(() => 'OT-' + String(nextOrder++).padStart(3, '0'))
+  document.querySelectorAll('[data-mobile-equipment]').forEach(item => {
+    item.textContent = item.closest('#cp-registro') ? equipment.join(' · ') : equipment[0]
+  })
+  document.querySelectorAll('[data-mobile-order]').forEach(item => {
+    item.textContent = item.closest('#cp-registro') ? orders.join(' · ') : orders[0]
+  })
+  navigateMobile('cp-registro')
+})
+
+document.querySelectorAll('[data-mobile-view]').forEach(button => {
+  button.addEventListener('click', () => {
+    const screen = button.dataset.mobileView
+    if (screen === 'cp-qr' && button.hasAttribute('data-reset-equipment')) {
+      equipmentList.replaceChildren(blankEquipment(1))
+    }
+    navigateMobile(screen)
   })
 })
 </script>
