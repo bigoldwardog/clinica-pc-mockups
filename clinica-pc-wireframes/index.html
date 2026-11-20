@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframes · Clínica del PC · Propuesta visual</title>
+<style>
+body{margin:0;background:#eee;padding:clamp(8px,3vw,30px)}
+main{max-width:1100px;margin:auto}
+#clinica-pc .nav-link{font:inherit;padding:8px 12px;border:1px solid #ccc;border-radius:6px;background:#fff;color:#222;cursor:pointer}
+#clinica-pc .nav-link[aria-selected=true]{background:#222;color:#fff;border-color:#222}
+#clinica-pc [hidden]{display:none}
+</style>
+<main>
+<style>
+#clinica-pc { color-scheme:light; --pc-ink:#222; --pc-dim:#595959; --pc-line:#dedede; --pc-red:#c00; --pc-pale:#ffebeb; font:14px/1.45 ClinicaRoboto,Arial,sans-serif; }
+#clinica-pc * { box-sizing:border-box; }
+#clinica-pc .pc-preview { display:flex; flex-wrap:wrap; gap:4px; margin:0 0 12px; }
+#clinica-pc .pc-shell { color:var(--pc-ink); background:#f4f4f4; border:1px solid var(--pc-line); }
+#clinica-pc .pc-top, #clinica-pc footer { background:#111; color:#fff; }
+#clinica-pc .pc-top { display:grid; grid-template-columns:190px minmax(0,1fr) auto; align-items:center; min-height:65px; }
+#clinica-pc .pc-brand { padding:0 18px; border-right:1px solid #777; }
+#clinica-pc .pc-brand img { display:block; width:150px; max-width:100%; height:auto; }
+#clinica-pc .pc-title { font-size:19px; font-weight:700; padding:0 17px; }
+#clinica-pc .pc-person { display:flex; gap:10px; align-items:center; padding:8px 16px; text-align:right; }
+#clinica-pc .pc-person small { display:block; color:#d6d6d6; }
+#clinica-pc .pc-avatar { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:#3b3b3b; font-size:12px; flex:none; }
+#clinica-pc .pc-layout { display:grid; grid-template-columns:190px minmax(0,1fr); min-height:395px; }
+#clinica-pc .pc-side { background:#fff; border-right:1px solid var(--pc-line); padding:18px 9px; }
+#clinica-pc .pc-side strong { display:block; margin:0 11px 8px; font-size:12px; color:var(--pc-dim); }
+#clinica-pc .pc-side span { display:block; border-left:3px solid transparent; padding:9px 10px; border-radius:4px; margin:2px 0; }
+#clinica-pc .pc-side .on { background:var(--pc-pale); color:#ab0000; border-color:var(--pc-red); font-weight:700; }
+#clinica-pc .pc-main { padding:22px; min-width:0; }
+#clinica-pc .pc-kicker { color:var(--pc-dim); font-size:12px; margin-bottom:4px; }
+#clinica-pc .pc-main h2 { color:#222; font-size:25px; font-weight:700; line-height:1.15; margin:0 0 7px; }
+#clinica-pc .pc-main p { margin:0; }
+#clinica-pc .pc-main .pc-sub { color:var(--pc-dim); margin:0 0 15px; }
+#clinica-pc .pc-heading, #clinica-pc .pc-row { display:flex; flex-wrap:wrap; gap:9px 12px; align-items:center; justify-content:space-between; }
+#clinica-pc .pc-box { padding:13px 15px; border:1px solid var(--pc-line); border-radius:8px; background:#fff; margin:0 0 10px; }
+#clinica-pc h3 { margin:0 0 8px; font:700 15px/1.3 ClinicaRoboto,Arial,sans-serif; color:#222; }
+#clinica-pc .pc-button { display:inline-block; border-radius:5px; padding:7px 11px; border:1px solid #bbb; font-weight:700; background:#fff; color:#222; white-space:normal; }
+#clinica-pc .pc-primary { color:#fff; background:var(--pc-red); border-color:var(--pc-red); }
+#clinica-pc .pc-field { flex:1; min-width:105px; }
+#clinica-pc .pc-field > b { display:block; margin-bottom:3px; font-size:12px; }
+#clinica-pc .pc-input { display:block; background:#fff; border:1px solid #bcbcbc; border-radius:5px; min-height:33px; padding:6px 8px; overflow-wrap:anywhere; }
+#clinica-pc .pc-muted { color:var(--pc-dim); font-size:12px; }
+#clinica-pc .pc-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px 12px; }
+#clinica-pc .pc-grid > * { min-width:0; }
+#clinica-pc .pc-status { display:inline-block; border-radius:14px; padding:3px 9px; font-size:12px; background:#f0f0f0; color:#444; }
+#clinica-pc .pc-green { background:#e9f3ec; color:#23533b; }
+#clinica-pc .pc-amber { background:#fff1db; color:#734811; }
+#clinica-pc .pc-line { padding:9px 0; border-bottom:1px solid #e8e8e8; }
+#clinica-pc .pc-line:last-child { border-bottom:0; padding-bottom:0; }
+#clinica-pc .pc-steps { display:flex; flex-wrap:wrap; gap:5px 12px; margin-bottom:11px; padding:7px 0; color:var(--pc-dim); border-bottom:1px solid var(--pc-line); font-size:12px; }
+#clinica-pc .pc-steps b { color:#aa0000; border-bottom:2px solid var(--pc-red); }
+#clinica-pc footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px 12px; padding:11px 16px; font-size:12px; }
+#clinica-pc .pc-public { max-width:430px; margin:0 auto; }
+#clinica-pc .pc-public .pc-top { grid-template-columns:135px 1fr; }
+#clinica-pc .pc-public .pc-brand { padding-inline:12px; }
+#clinica-pc .pc-public .pc-title { font-size:17px; }
+#clinica-pc .pc-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:0 0 12px}
+#clinica-pc .pc-kpis>div{background:#fff;border:1px solid var(--pc-line);border-radius:8px;padding:10px 12px}
+#clinica-pc .pc-kpis dt,#clinica-pc .pc-check-id dt{color:var(--pc-dim);font-size:12px}
+#clinica-pc .pc-kpis dd{margin:2px 0 0;font-size:23px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15}
+#clinica-pc .pc-check-sheet h3{margin-bottom:0}
+#clinica-pc .pc-check-id{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:8px;margin:12px 0;padding:10px 0;border-block:1px solid var(--pc-line)}
+#clinica-pc .pc-check-id dd{margin:2px 0 0;font-weight:700}
+#clinica-pc .pc-check-group{border:1px solid var(--pc-line);border-radius:5px;margin:7px 0;overflow:hidden}
+#clinica-pc .pc-check-group summary{background:#f1f1f1;padding:8px 10px;font-weight:700;cursor:pointer}
+#clinica-pc .pc-check-group summary span{float:right;color:var(--pc-dim);font-weight:400}
+#clinica-pc .pc-check-group table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:13px}
+#clinica-pc .pc-check-group th,#clinica-pc .pc-check-group td{border-top:1px solid var(--pc-line);padding:7px 8px}
+#clinica-pc .pc-check-group th:first-child{text-align:left;overflow-wrap:anywhere}
+#clinica-pc .pc-check-group thead th{background:#fafafa}
+#clinica-pc .pc-check-group thead th:not(:first-child){width:clamp(34px,8vw,58px);padding-inline:2px}
+#clinica-pc .pc-check-group tbody th{font-weight:400}
+#clinica-pc .pc-check-group td{text-align:center;border-left:1px solid var(--pc-line);padding-inline:2px}
+#clinica-pc .pc-check-group input{display:inline-block;vertical-align:middle;width:17px;height:17px;margin:0;accent-color:var(--pc-red)}
+#clinica-pc .pc-task-code{white-space:nowrap}
+#clinica-pc .pc-observaciones{padding-top:10px}
+#clinica-pc .pc-observaciones p{border:1px solid var(--pc-line);padding:8px;margin-top:6px;border-radius:4px}
+
+@media (max-width:650px) {
+ #clinica-pc .pc-top { grid-template-columns:minmax(0,1fr) auto; }
+ #clinica-pc .pc-brand { border:0; padding:8px 12px 0; }
+ #clinica-pc .pc-brand img { width:112px; }
+ #clinica-pc .pc-title { grid-row:2; padding:0 12px 8px; font-size:16px; }
+ #clinica-pc .pc-person { grid-column:2; grid-row:1 / 3; padding:6px 9px; font-size:12px; }
+ #clinica-pc .pc-layout { display:block; }
+ #clinica-pc .pc-side { display:flex; flex-wrap:wrap; gap:1px; padding:5px 8px; border-right:0; border-bottom:1px solid var(--pc-line); }
+ #clinica-pc .pc-side strong { display:none; }
+ #clinica-pc .pc-side span { padding:5px 6px; font-size:12px; }
+ #clinica-pc .pc-main { padding:13px; }
+ #clinica-pc .pc-public .pc-title { grid-row:auto; padding:0 9px; }
+ #clinica-pc .pc-public .pc-brand { padding-block:0; }
+}
+
+#clinica-pc .pc-preview{gap:10px 18px}
+#clinica-pc .pc-preview-group{min-width:0}
+#clinica-pc .pc-preview-label{display:block;margin:0 0 4px;color:var(--pc-dim);font-size:12px;font-weight:700}
+#clinica-pc .pc-preview-buttons{display:flex;flex-wrap:wrap;gap:4px}
+#clinica-pc .pc-qr-poster{text-align:center;padding:24px 18px}
+#clinica-pc .pc-qr-poster .pc-sub{max-width:270px;margin:8px auto 12px}
+#clinica-pc .pc-qr-image{display:block;max-width:100%;height:auto;margin:0 auto 14px;border:1px solid var(--pc-line);border-radius:6px;image-rendering:pixelated}
+#clinica-pc .pc-qr-links{display:grid;justify-items:center;gap:10px}
+#clinica-pc .pc-qr-links .pc-button{text-decoration:none}
+#clinica-pc .pc-qr-direct{color:#9d0000}
+#clinica-pc .pc-public .pc-main:not(.pc-qr-poster){padding:20px}
+#clinica-pc .pc-public .pc-top{min-height:60px}
+@media(max-width:360px){
+ #clinica-pc .pc-public .pc-grid{grid-template-columns:1fr}
+ #clinica-pc .pc-public .pc-main:not(.pc-qr-poster){padding:14px}
+}
+
+</style>
+<style>
+body { background:#fff; }
+#clinica-pc { --pc-ink:#202020; --pc-dim:#505050; --pc-line:#a0a0a0; --pc-red:#303030; --pc-pale:#e7e7e7; font-family:Arial,sans-serif; }
+#clinica-pc .pc-top, #clinica-pc footer { color:#202020; background:#eaeaea; }
+#clinica-pc .pc-top { border-bottom:1px solid var(--pc-line); }
+#clinica-pc footer { border-top:1px solid var(--pc-line); }
+#clinica-pc .pc-person small { color:#505050; }
+#clinica-pc .pc-brand { border-color:var(--pc-line); }
+#clinica-pc .pc-brand img { display:none; }
+#clinica-pc .pc-logo-slot { display:grid; place-items:center; width:140px; max-width:100%; min-height:27px; border:1px dashed #737373; font-size:12px; }
+#clinica-pc .pc-avatar { color:#202020; background:#fff; border:1px solid #737373; }
+#clinica-pc .pc-layout, #clinica-pc .pc-public .pc-main { background:#f7f7f7; }
+#clinica-pc .pc-side .on { color:#202020; }
+#clinica-pc .pc-box, #clinica-pc .pc-input, #clinica-pc .pc-kpis > div, #clinica-pc .pc-check-group, #clinica-pc .pc-button, #clinica-pc .nav-link { border-radius:2px; }
+#clinica-pc .pc-input { border-color:#999; }
+#clinica-pc .pc-button { border-color:#707070; }
+#clinica-pc .pc-primary { background:#dcdcdc; color:#202020; border-color:#555; }
+#clinica-pc .pc-status { color:#222; background:#ededed; border:1px solid #9c9c9c; border-radius:3px; }
+#clinica-pc .pc-steps b, #clinica-pc .pc-qr-direct { color:#222; }
+#clinica-pc .pc-qr-image { border-radius:2px; }
+</style>
+<div id="clinica-pc" lang="es">
+<h1 style="font:700 21px Arial,sans-serif;margin:0 0 12px">Wireframes · Clínica del PC</h1>
+<div class="pc-preview nav nav-pills" role="tablist" aria-label="Pantallas de la propuesta">
+<div class="pc-preview-group"><span class="pc-preview-label">Personal · Escritorio</span><div class="pc-preview-buttons"><button class="nav-link active" type="button" role="tab" id="cp-tab-panel" aria-controls="cp-panel" aria-selected="true">Panel del día</button>
+<button class="nav-link" type="button" role="tab" id="cp-tab-recepcion" aria-controls="cp-recepcion" aria-selected="false">Recepción</button>
+<button class="nav-link" type="button" role="tab" id="cp-tab-trabajo" aria-controls="cp-trabajo" aria-selected="false">Trabajo técnico</button>
+<button class="nav-link" type="button" role="tab" id="cp-tab-entrega" aria-controls="cp-entrega" aria-selected="false">Entrega y cierre</button>
+<button class="nav-link" type="button" role="tab" id="cp-tab-permisos" aria-controls="cp-permisos" aria-selected="false">Roles y permisos</button></div></div>
+<div class="pc-preview-group"><span class="pc-preview-label">Inscripción de equipos</span><div class="pc-preview-buttons"><button class="nav-link" type="button" role="tab" id="cp-tab-afiche" aria-controls="cp-afiche" aria-selected="false">Afiche con QR</button>
+<button class="nav-link" type="button" role="tab" id="cp-tab-qr" aria-controls="cp-qr" aria-selected="false">Formulario móvil</button></div></div>
+</div>
+
+<section id="cp-panel" role="tabpanel" aria-labelledby="cp-tab-panel">
+<div class="pc-shell">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Andrea Molina</b><small>Superusuario</small></div><span class="pc-avatar" aria-hidden="true">AM</span></div></header>
+<div class="pc-layout">
+<nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span class="on" aria-current="page">Atenciones del día</span><span>Recepción</span><span>Trabajo técnico</span><span>Entregas</span><span>Historial</span><span>Roles y permisos</span></nav>
+<div class="pc-main">
+<div class="pc-kicker">Panel de atención</div>
+<div class="pc-heading"><h2>Atenciones del día</h2><span class="pc-button pc-primary">Abrir recepción</span></div>
+<p class="pc-sub">Consulta el estado de los equipos durante la jornada.</p>
+<dl class="pc-kpis" aria-label="Resumen de atenciones del día">
+<div><dt>Total del día</dt><dd>3</dd></div>
+<div><dt>Pendientes de recepción</dt><dd>1</dd></div>
+<div><dt>En mantención</dt><dd>1</dd></div>
+<div><dt>Listas para entrega</dt><dd>1</dd></div>
+<div><dt>Cerradas</dt><dd>0</dd></div>
+</dl>
+<div class="pc-box">
+<div class="pc-row"><div class="pc-field"><b>Buscar atención</b><span class="pc-input pc-muted">Orden, RUT, propietario o equipo</span></div><div class="pc-field"><b>Estado</b><span class="pc-input">Todos los estados ▾</span></div><span class="pc-button">Buscar</span></div>
+</div>
+<div class="pc-box">
+<h3>Órdenes de trabajo</h3>
+<div class="pc-row pc-line"><div><b>OT-024 · Lenovo ThinkPad T480</b><p class="pc-muted">Camila Soto · Mantención lógica</p></div><span class="pc-status pc-amber">Pendiente de recepción</span></div>
+<div class="pc-row pc-line"><div><b>OT-023 · HP ProBook 440</b><p class="pc-muted">Diego Silva · Mantención física</p></div><span class="pc-status">En mantención</span></div>
+<div class="pc-row pc-line"><div><b>OT-022 · Acer Aspire 5</b><p class="pc-muted">Valentina Rojas · Formateo</p></div><span class="pc-status pc-green">Listo para entrega</span></div>
+</div>
+</div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-afiche" role="tabpanel" aria-labelledby="cp-tab-afiche" hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main pc-qr-poster">
+<h2>Inscribe tu equipo</h2>
+<p class="pc-sub">Escanea el código con la cámara de tu celular para abrir el formulario de inscripción.</p>
+<img class="pc-qr-image" src="qr-inscripcion.png" width="240" height="240" alt="Código QR del formulario de inscripción de equipos">
+<div class="pc-qr-links">
+<a class="pc-button pc-primary" href="#cp-qr" data-preview-tab="cp-tab-qr">Ver formulario móvil</a>
+<a class="pc-qr-direct" href="inscripcion.html">Abrir en una pestaña aparte</a>
+</div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-qr" role="tabpanel" aria-labelledby="cp-tab-qr" hidden>
+<div class="pc-shell pc-public">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div></header>
+<div class="pc-main">
+<div class="pc-kicker">Formulario del propietario</div>
+<h2>Inscripción de equipos</h2>
+<p class="pc-sub">Completa tus datos y agrega los equipos que llevarás a la jornada.</p>
+<div class="pc-box"><h3>Datos del propietario</h3><div class="pc-grid">
+<div class="pc-field"><b>Nombre completo</b><span class="pc-input">Camila Soto</span></div>
+<div class="pc-field"><b>RUT</b><span class="pc-input">99.999.991-3</span></div>
+<div class="pc-field"><b>Teléfono</b><span class="pc-input">+56 9 •••• 0142</span></div>
+<div class="pc-field"><b>Correo</b><span class="pc-input">camila@example.com</span></div>
+</div></div>
+<div class="pc-box"><h3>Equipo 1</h3><div class="pc-grid">
+<div class="pc-field"><b>Tipo de dispositivo</b><span class="pc-input">Notebook ▾</span></div>
+<div class="pc-field"><b>Marca y modelo</b><span class="pc-input">Lenovo ThinkPad T480</span></div>
+</div></div>
+<div class="pc-row"><span class="pc-button">+ Agregar equipo</span><span class="pc-button pc-primary">Confirmar inscripción</span></div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-recepcion" role="tabpanel" aria-labelledby="cp-tab-recepcion" hidden>
+<div class="pc-shell">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Martín Reyes</b><small>Apoyo técnico</small></div><span class="pc-avatar" aria-hidden="true">MR</span></div></header>
+<div class="pc-layout">
+<nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span class="on" aria-current="page">Recepción</span><span>Trabajo técnico</span></nav>
+<div class="pc-main">
+<div class="pc-kicker">Atenciones del día / OT-024</div>
+<h2>Recepción del equipo</h2>
+<p class="pc-sub">Selecciona el equipo y registra cómo funciona al recibirlo.</p>
+<div class="pc-box">
+<div class="pc-row"><div class="pc-field"><b>RUT del propietario</b><span class="pc-input">99.999.991-3</span></div></div>
+<div class="pc-line"><div class="pc-field"><b>Equipo inscrito</b><span class="pc-input">Lenovo ThinkPad T480 · 1 de 2 equipos ▾</span></div></div>
+</div>
+<div class="pc-box">
+<h3>Ficha técnica y prueba inicial</h3>
+<div class="pc-grid">
+<div class="pc-field"><b>Tipo, marca y modelo</b><span class="pc-input">Notebook · Lenovo ThinkPad T480</span></div>
+<div class="pc-field"><b>Número de serie</b><span class="pc-input">DEMO-T480-024</span></div>
+<div class="pc-field"><b>Diagnóstico inicial</b><span class="pc-input">Inicio lento</span></div>
+<div class="pc-field"><b>Trabajo a realizar</b><span class="pc-input">Mantención lógica ▾</span></div>
+</div>
+<div class="pc-line"><b>Prueba inicial con el propietario</b><p>Enciende y llega al escritorio. El inicio es lento.</p></div>
+</div>
+<div class="pc-row"><span class="pc-muted">La prueba inicial queda registrada en la orden.</span><span class="pc-button pc-primary">Confirmar recepción</span></div>
+</div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-trabajo" role="tabpanel" aria-labelledby="cp-tab-trabajo" hidden>
+<div class="pc-shell">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Martín Reyes</b><small>Apoyo técnico</small></div><span class="pc-avatar" aria-hidden="true">MR</span></div></header>
+<div class="pc-layout">
+<nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span>Recepción</span><span class="on" aria-current="page">Trabajo técnico</span></nav>
+<div class="pc-main">
+<div class="pc-kicker">Atenciones del día / OT-024</div>
+<div class="pc-heading"><h2>Trabajo técnico</h2><span class="pc-status">En mantención</span></div>
+<p class="pc-sub">Lenovo ThinkPad T480 · Camila Soto</p>
+<div class="pc-steps"><span>Recepción registrada</span><b>Checklist y observaciones</b><span>Entrega y cierre</span></div>
+<div class="pc-box pc-check-sheet">
+<div class="pc-row"><h3>Checklist · Restauración y mantención lógica</h3><span class="pc-status">OT-024</span></div>
+<dl class="pc-check-id"><div><dt>Fecha</dt><dd>20/11/2026</dd></div><div><dt>Propietaria</dt><dd>Camila Soto</dd></div><div><dt>Equipo</dt><dd>Lenovo ThinkPad T480</dd></div><div><dt>Técnico</dt><dd>Martín Reyes</dd></div></dl>
+<details class="pc-check-group" open><summary>Preparación <span>2 ítems</span></summary><table aria-label="Preparación"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row">Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente</th><td><input type="radio" name="check-0-0" aria-label="Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente · Sí" checked></td><td><input type="radio" name="check-0-0" aria-label="Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente · No"></td><td><input type="radio" name="check-0-0" aria-label="Verificar que el equipo se encuentra tabulado (fichado) con los datos del cliente · N/A"></td></tr><tr><th scope="row">Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO)</th><td><input type="radio" name="check-0-1" aria-label="Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO) · Sí"></td><td><input type="radio" name="check-0-1" aria-label="Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO) · No"></td><td><input type="radio" name="check-0-1" aria-label="Procurar que los materiales y herramientas necesarias estén disponibles para la mantención (medio de instalación, CD/DVD o pendrive con imagen de SO) · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group" open><summary>Verificación <span>14 ítems</span></summary><table aria-label="Verificación"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">VER-01</b> Verificar que el equipo encienda</th><td><input type="radio" name="check-1-0" aria-label="VER-01 · Sí" checked></td><td><input type="radio" name="check-1-0" aria-label="VER-01 · No"></td><td><input type="radio" name="check-1-0" aria-label="VER-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-02</b> Verificar que las luces del equipo enciendan según corresponda</th><td><input type="radio" name="check-1-1" aria-label="VER-02 · Sí" checked></td><td><input type="radio" name="check-1-1" aria-label="VER-02 · No"></td><td><input type="radio" name="check-1-1" aria-label="VER-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-03</b> Verificar que el arranque / boot del equipo sea adecuado</th><td><input type="radio" name="check-1-2" aria-label="VER-03 · Sí"></td><td><input type="radio" name="check-1-2" aria-label="VER-03 · No"></td><td><input type="radio" name="check-1-2" aria-label="VER-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-04</b> Verificar disponibilidad de conexión a internet</th><td><input type="radio" name="check-1-3" aria-label="VER-04 · Sí"></td><td><input type="radio" name="check-1-3" aria-label="VER-04 · No"></td><td><input type="radio" name="check-1-3" aria-label="VER-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-05</b> Iniciar sesión en el equipo con las credenciales provistas</th><td><input type="radio" name="check-1-4" aria-label="VER-05 · Sí"></td><td><input type="radio" name="check-1-4" aria-label="VER-05 · No"></td><td><input type="radio" name="check-1-4" aria-label="VER-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-06</b> Identificar ejecución de software de inicio/en segundo plano (Bloatware)</th><td><input type="radio" name="check-1-5" aria-label="VER-06 · Sí"></td><td><input type="radio" name="check-1-5" aria-label="VER-06 · No"></td><td><input type="radio" name="check-1-5" aria-label="VER-06 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-07</b> Identificar nombre, tipo, y versión del SO</th><td><input type="radio" name="check-1-6" aria-label="VER-07 · Sí"></td><td><input type="radio" name="check-1-6" aria-label="VER-07 · No"></td><td><input type="radio" name="check-1-6" aria-label="VER-07 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-08</b> Identificar licencias, credenciales y/o contratos referentes al SO</th><td><input type="radio" name="check-1-7" aria-label="VER-08 · Sí"></td><td><input type="radio" name="check-1-7" aria-label="VER-08 · No"></td><td><input type="radio" name="check-1-7" aria-label="VER-08 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-09</b> Identificar actualizaciones, parches disponibles del SO</th><td><input type="radio" name="check-1-8" aria-label="VER-09 · Sí"></td><td><input type="radio" name="check-1-8" aria-label="VER-09 · No"></td><td><input type="radio" name="check-1-8" aria-label="VER-09 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-10</b> Identificar actualizaciones, parches, drivers disponibles de los dispositivos</th><td><input type="radio" name="check-1-9" aria-label="VER-10 · Sí"></td><td><input type="radio" name="check-1-9" aria-label="VER-10 · No"></td><td><input type="radio" name="check-1-9" aria-label="VER-10 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-11</b> Verificar respaldos anteriores del usuario</th><td><input type="radio" name="check-1-10" aria-label="VER-11 · Sí"></td><td><input type="radio" name="check-1-10" aria-label="VER-11 · No"></td><td><input type="radio" name="check-1-10" aria-label="VER-11 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-12</b> Crear respaldo en caso de que no exista</th><td><input type="radio" name="check-1-11" aria-label="VER-12 · Sí"></td><td><input type="radio" name="check-1-11" aria-label="VER-12 · No"></td><td><input type="radio" name="check-1-11" aria-label="VER-12 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-13</b> Verificar que el respaldo disponible sea legible y/o restaurable</th><td><input type="radio" name="check-1-12" aria-label="VER-13 · Sí"></td><td><input type="radio" name="check-1-12" aria-label="VER-13 · No"></td><td><input type="radio" name="check-1-12" aria-label="VER-13 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">VER-14</b> Identificar ubicación del respaldo (partición de disco duro o nube)</th><td><input type="radio" name="check-1-13" aria-label="VER-14 · Sí"></td><td><input type="radio" name="check-1-13" aria-label="VER-14 · No"></td><td><input type="radio" name="check-1-13" aria-label="VER-14 · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group"><summary>Restauración <span>13 ítems</span></summary><table aria-label="Restauración"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">RES-01</b> Desconectar el equipo de la red wifi/ethernet</th><td><input type="radio" name="check-2-0" aria-label="RES-01 · Sí"></td><td><input type="radio" name="check-2-0" aria-label="RES-01 · No"></td><td><input type="radio" name="check-2-0" aria-label="RES-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-02</b> Conectar la unidad extraíble con la imagen de SO y reiniciar el equipo</th><td><input type="radio" name="check-2-1" aria-label="RES-02 · Sí"></td><td><input type="radio" name="check-2-1" aria-label="RES-02 · No"></td><td><input type="radio" name="check-2-1" aria-label="RES-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-03</b> Ingresar al entorno BIOS/UEFI</th><td><input type="radio" name="check-2-2" aria-label="RES-03 · Sí"></td><td><input type="radio" name="check-2-2" aria-label="RES-03 · No"></td><td><input type="radio" name="check-2-2" aria-label="RES-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-04</b> Modificar el orden de arranque para iniciar desde el medio de instalación</th><td><input type="radio" name="check-2-3" aria-label="RES-04 · Sí"></td><td><input type="radio" name="check-2-3" aria-label="RES-04 · No"></td><td><input type="radio" name="check-2-3" aria-label="RES-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-05</b> Aplicar cambios realizados y salir de la BIOS</th><td><input type="radio" name="check-2-4" aria-label="RES-05 · Sí"></td><td><input type="radio" name="check-2-4" aria-label="RES-05 · No"></td><td><input type="radio" name="check-2-4" aria-label="RES-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-06</b> Iniciar instalación del SO</th><td><input type="radio" name="check-2-5" aria-label="RES-06 · Sí"></td><td><input type="radio" name="check-2-5" aria-label="RES-06 · No"></td><td><input type="radio" name="check-2-5" aria-label="RES-06 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-07</b> Ingresar clave de producto</th><td><input type="radio" name="check-2-6" aria-label="RES-07 · Sí"></td><td><input type="radio" name="check-2-6" aria-label="RES-07 · No"></td><td><input type="radio" name="check-2-6" aria-label="RES-07 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-08</b> Seleccionar distribución del teclado</th><td><input type="radio" name="check-2-7" aria-label="RES-08 · Sí"></td><td><input type="radio" name="check-2-7" aria-label="RES-08 · No"></td><td><input type="radio" name="check-2-7" aria-label="RES-08 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-09</b> Seleccionar edición de SO según preferencia del cliente (edición almacenada en imagen)</th><td><input type="radio" name="check-2-8" aria-label="RES-09 · Sí"></td><td><input type="radio" name="check-2-8" aria-label="RES-09 · No"></td><td><input type="radio" name="check-2-8" aria-label="RES-09 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-10</b> Eliminar particiones existentes</th><td><input type="radio" name="check-2-9" aria-label="RES-10 · Sí"></td><td><input type="radio" name="check-2-9" aria-label="RES-10 · No"></td><td><input type="radio" name="check-2-9" aria-label="RES-10 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-11</b> Crear partición nueva en formato NTFS (Windows)</th><td><input type="radio" name="check-2-10" aria-label="RES-11 · Sí"></td><td><input type="radio" name="check-2-10" aria-label="RES-11 · No"></td><td><input type="radio" name="check-2-10" aria-label="RES-11 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-12</b> Asignar partición principal para instalación de SO e instalar</th><td><input type="radio" name="check-2-11" aria-label="RES-12 · Sí"></td><td><input type="radio" name="check-2-11" aria-label="RES-12 · No"></td><td><input type="radio" name="check-2-11" aria-label="RES-12 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">RES-13</b> Reiniciar el equipo</th><td><input type="radio" name="check-2-12" aria-label="RES-13 · Sí"></td><td><input type="radio" name="check-2-12" aria-label="RES-13 · No"></td><td><input type="radio" name="check-2-12" aria-label="RES-13 · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group"><summary>Configuración <span>6 ítems</span></summary><table aria-label="Configuración"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">CON-01</b> Seleccionar región de preferencia</th><td><input type="radio" name="check-3-0" aria-label="CON-01 · Sí"></td><td><input type="radio" name="check-3-0" aria-label="CON-01 · No"></td><td><input type="radio" name="check-3-0" aria-label="CON-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">CON-02</b> Seleccionar la distribución de teclado</th><td><input type="radio" name="check-3-1" aria-label="CON-02 · Sí"></td><td><input type="radio" name="check-3-1" aria-label="CON-02 · No"></td><td><input type="radio" name="check-3-1" aria-label="CON-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">CON-03</b> Agregar distribución de teclado adicional</th><td><input type="radio" name="check-3-2" aria-label="CON-03 · Sí"></td><td><input type="radio" name="check-3-2" aria-label="CON-03 · No"></td><td><input type="radio" name="check-3-2" aria-label="CON-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">CON-04</b> Establecer nombre de equipo, contraseña y preguntas de seguridad</th><td><input type="radio" name="check-3-3" aria-label="CON-04 · Sí"></td><td><input type="radio" name="check-3-3" aria-label="CON-04 · No"></td><td><input type="radio" name="check-3-3" aria-label="CON-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">CON-05</b> Guardar nombre de equipo, contraseña, preguntas y respuestas de seguridad en un espacio seguro (físico o virtual)</th><td><input type="radio" name="check-3-4" aria-label="CON-05 · Sí"></td><td><input type="radio" name="check-3-4" aria-label="CON-05 · No"></td><td><input type="radio" name="check-3-4" aria-label="CON-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">CON-06</b> Establecer configuración de privacidad para el dispositivo</th><td><input type="radio" name="check-3-5" aria-label="CON-06 · Sí"></td><td><input type="radio" name="check-3-5" aria-label="CON-06 · No"></td><td><input type="radio" name="check-3-5" aria-label="CON-06 · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group"><summary>Inicio <span>8 ítems</span></summary><table aria-label="Inicio"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">INI-01</b> Verificar el correcto inicio del equipo</th><td><input type="radio" name="check-4-0" aria-label="INI-01 · Sí"></td><td><input type="radio" name="check-4-0" aria-label="INI-01 · No"></td><td><input type="radio" name="check-4-0" aria-label="INI-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-02</b> Validar las credenciales establecidas en el inicio de sesión</th><td><input type="radio" name="check-4-1" aria-label="INI-02 · Sí"></td><td><input type="radio" name="check-4-1" aria-label="INI-02 · No"></td><td><input type="radio" name="check-4-1" aria-label="INI-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-03</b> Realizar conexión a internet</th><td><input type="radio" name="check-4-2" aria-label="INI-03 · Sí"></td><td><input type="radio" name="check-4-2" aria-label="INI-03 · No"></td><td><input type="radio" name="check-4-2" aria-label="INI-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-04</b> Abrir administrador de dispositivos, verificación de controladores</th><td><input type="radio" name="check-4-3" aria-label="INI-04 · Sí"></td><td><input type="radio" name="check-4-3" aria-label="INI-04 · No"></td><td><input type="radio" name="check-4-3" aria-label="INI-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-05</b> Revisar el visor de eventos para detectar errores o advertencias del sistema</th><td><input type="radio" name="check-4-4" aria-label="INI-05 · Sí"></td><td><input type="radio" name="check-4-4" aria-label="INI-05 · No"></td><td><input type="radio" name="check-4-4" aria-label="INI-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-06</b> Abrir administrador de tareas y verificar uso de RAM, CPU y disco.</th><td><input type="radio" name="check-4-5" aria-label="INI-06 · Sí"></td><td><input type="radio" name="check-4-5" aria-label="INI-06 · No"></td><td><input type="radio" name="check-4-5" aria-label="INI-06 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-07</b> Identificar aplicaciones de inicio/en segundo plano no deseadas (Bloatware)</th><td><input type="radio" name="check-4-6" aria-label="INI-07 · Sí"></td><td><input type="radio" name="check-4-6" aria-label="INI-07 · No"></td><td><input type="radio" name="check-4-6" aria-label="INI-07 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">INI-08</b> Deshabilitar aplicaciones no deseadas de inicio/en segundo plano</th><td><input type="radio" name="check-4-7" aria-label="INI-08 · Sí"></td><td><input type="radio" name="check-4-7" aria-label="INI-08 · No"></td><td><input type="radio" name="check-4-7" aria-label="INI-08 · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group"><summary>Mantención lógica <span>12 ítems</span></summary><table aria-label="Mantención lógica"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">MLOG-01</b> Verificar la existencia de más de un perfil dentro del equipo</th><td><input type="radio" name="check-5-0" aria-label="MLOG-01 · Sí"></td><td><input type="radio" name="check-5-0" aria-label="MLOG-01 · No"></td><td><input type="radio" name="check-5-0" aria-label="MLOG-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-02</b> Ejecutar antivirus y antimalware</th><td><input type="radio" name="check-5-1" aria-label="MLOG-02 · Sí"></td><td><input type="radio" name="check-5-1" aria-label="MLOG-02 · No"></td><td><input type="radio" name="check-5-1" aria-label="MLOG-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-03</b> Ejecutar cleanmgr (liberación de espacio en disco)</th><td><input type="radio" name="check-5-2" aria-label="MLOG-03 · Sí"></td><td><input type="radio" name="check-5-2" aria-label="MLOG-03 · No"></td><td><input type="radio" name="check-5-2" aria-label="MLOG-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-04</b> Ejecutar sfc /scannow (comprobación de integridad de archivos)</th><td><input type="radio" name="check-5-3" aria-label="MLOG-04 · Sí"></td><td><input type="radio" name="check-5-3" aria-label="MLOG-04 · No"></td><td><input type="radio" name="check-5-3" aria-label="MLOG-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-05</b> Ejecutar chkdsk (análisis y reparación de errores en disco)</th><td><input type="radio" name="check-5-4" aria-label="MLOG-05 · Sí"></td><td><input type="radio" name="check-5-4" aria-label="MLOG-05 · No"></td><td><input type="radio" name="check-5-4" aria-label="MLOG-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-06</b> Ejecutar prefetch</th><td><input type="radio" name="check-5-5" aria-label="MLOG-06 · Sí"></td><td><input type="radio" name="check-5-5" aria-label="MLOG-06 · No"></td><td><input type="radio" name="check-5-5" aria-label="MLOG-06 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-07</b> Eliminar caché, historial y cookies de todos los exploradores</th><td><input type="radio" name="check-5-6" aria-label="MLOG-07 · Sí"></td><td><input type="radio" name="check-5-6" aria-label="MLOG-07 · No"></td><td><input type="radio" name="check-5-6" aria-label="MLOG-07 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-08</b> Eliminar archivos de configuración no esenciales del pc (archivos temporales (temp)o archivos residuales de una instalación, archivos de configuración de programas que ya no están disponibles en el equipo, etc.)</th><td><input type="radio" name="check-5-7" aria-label="MLOG-08 · Sí"></td><td><input type="radio" name="check-5-7" aria-label="MLOG-08 · No"></td><td><input type="radio" name="check-5-7" aria-label="MLOG-08 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-09</b> Instalar y ejecutar CCleaner, Wise disk cleaner y Treesize</th><td><input type="radio" name="check-5-8" aria-label="MLOG-09 · Sí"></td><td><input type="radio" name="check-5-8" aria-label="MLOG-09 · No"></td><td><input type="radio" name="check-5-8" aria-label="MLOG-09 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-10</b> Desinstalar CCleaner, WDC y Treesize</th><td><input type="radio" name="check-5-9" aria-label="MLOG-10 · Sí"></td><td><input type="radio" name="check-5-9" aria-label="MLOG-10 · No"></td><td><input type="radio" name="check-5-9" aria-label="MLOG-10 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-11</b> Aplicar la mantención lógica a todos los perfiles</th><td><input type="radio" name="check-5-10" aria-label="MLOG-11 · Sí"></td><td><input type="radio" name="check-5-10" aria-label="MLOG-11 · No"></td><td><input type="radio" name="check-5-10" aria-label="MLOG-11 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">MLOG-12</b> Reiniciar el equipo</th><td><input type="radio" name="check-5-11" aria-label="MLOG-12 · Sí"></td><td><input type="radio" name="check-5-11" aria-label="MLOG-12 · No"></td><td><input type="radio" name="check-5-11" aria-label="MLOG-12 · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group"><summary>Actualización <span>5 ítems</span></summary><table aria-label="Actualización"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">ACT-01</b> Verificar y actualizar controladores de pantalla, chipset de placa madre, tarjeta de red y audio</th><td><input type="radio" name="check-6-0" aria-label="ACT-01 · Sí"></td><td><input type="radio" name="check-6-0" aria-label="ACT-01 · No"></td><td><input type="radio" name="check-6-0" aria-label="ACT-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">ACT-02</b> Ejecutar Windows Update, buscar actualizaciones y actualizar el equipo con todas las actualizaciones disponibles que no sean opcionales</th><td><input type="radio" name="check-6-1" aria-label="ACT-02 · Sí"></td><td><input type="radio" name="check-6-1" aria-label="ACT-02 · No"></td><td><input type="radio" name="check-6-1" aria-label="ACT-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">ACT-03</b> Abrir Microsoft Store, actualizar la aplicación, buscar e instalar actualizaciones de software disponibles</th><td><input type="radio" name="check-6-2" aria-label="ACT-03 · Sí"></td><td><input type="radio" name="check-6-2" aria-label="ACT-03 · No"></td><td><input type="radio" name="check-6-2" aria-label="ACT-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">ACT-04</b> Instalar y registrar software adicional de preferencia (Microsoft Office, antivirus, antimalware, etc)</th><td><input type="radio" name="check-6-3" aria-label="ACT-04 · Sí"></td><td><input type="radio" name="check-6-3" aria-label="ACT-04 · No"></td><td><input type="radio" name="check-6-3" aria-label="ACT-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">ACT-05</b> Guardar licencias de software adicional en un espacio seguro (físico o virtual)</th><td><input type="radio" name="check-6-4" aria-label="ACT-05 · Sí"></td><td><input type="radio" name="check-6-4" aria-label="ACT-05 · No"></td><td><input type="radio" name="check-6-4" aria-label="ACT-05 · N/A"></td></tr></tbody></table></details>
+<details class="pc-check-group"><summary>Finalización <span>6 ítems</span></summary><table aria-label="Finalización"><thead><tr><th scope="col">Descripción</th><th scope="col">Sí</th><th scope="col">No</th><th scope="col"><abbr title="No aplica">N/A</abbr></th></tr></thead><tbody><tr><th scope="row"><b class="pc-task-code">FIN-01</b> Crear nuevo respaldo/punto de restauración</th><td><input type="radio" name="check-7-0" aria-label="FIN-01 · Sí"></td><td><input type="radio" name="check-7-0" aria-label="FIN-01 · No"></td><td><input type="radio" name="check-7-0" aria-label="FIN-01 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">FIN-02</b> Identificar ubicación del respaldo (partición de disco duro o nube)</th><td><input type="radio" name="check-7-1" aria-label="FIN-02 · Sí"></td><td><input type="radio" name="check-7-1" aria-label="FIN-02 · No"></td><td><input type="radio" name="check-7-1" aria-label="FIN-02 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">FIN-03</b> Verificar el visor de eventos y registrar errores críticos o advertencias relevantes</th><td><input type="radio" name="check-7-2" aria-label="FIN-03 · Sí"></td><td><input type="radio" name="check-7-2" aria-label="FIN-03 · No"></td><td><input type="radio" name="check-7-2" aria-label="FIN-03 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">FIN-04</b> Anotar estado de entrega del equipo y los pasos realizados</th><td><input type="radio" name="check-7-3" aria-label="FIN-04 · Sí"></td><td><input type="radio" name="check-7-3" aria-label="FIN-04 · No"></td><td><input type="radio" name="check-7-3" aria-label="FIN-04 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">FIN-05</b> Apagar el equipo para finalizar con la mantención/restauración</th><td><input type="radio" name="check-7-4" aria-label="FIN-05 · Sí"></td><td><input type="radio" name="check-7-4" aria-label="FIN-05 · No"></td><td><input type="radio" name="check-7-4" aria-label="FIN-05 · N/A"></td></tr><tr><th scope="row"><b class="pc-task-code">FIN-06</b> Realizar limpieza externa del equipo</th><td><input type="radio" name="check-7-5" aria-label="FIN-06 · Sí"></td><td><input type="radio" name="check-7-5" aria-label="FIN-06 · No"></td><td><input type="radio" name="check-7-5" aria-label="FIN-06 · N/A"></td></tr></tbody></table></details>
+<div class="pc-observaciones"><h3>Observaciones generales</h3><p>Se identificaron aplicaciones que se ejecutaban al iniciar. Tras la mantención, el equipo inicia con normalidad.</p></div>
+</div>
+<div class="pc-box"><h3>Verificación posterior</h3><div class="pc-grid"><div><b>Antes del trabajo</b><p>Enciende y llega al escritorio. Inicio lento.</p></div><div><b>Después del trabajo</b><p>Enciende y llega al escritorio con normalidad.</p></div></div></div>
+<div class="pc-row"><span class="pc-status pc-green">Funcionamiento verificado</span><span class="pc-button pc-primary">Marcar listo para entrega</span></div>
+</div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+
+<section id="cp-entrega" role="tabpanel" aria-labelledby="cp-tab-entrega" hidden>
+<div class="pc-shell">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Sofía López</b><small>Coordinación de entregas</small></div><span class="pc-avatar" aria-hidden="true">SL</span></div></header>
+<div class="pc-layout">
+<nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span class="on" aria-current="page">Entregas</span></nav>
+<div class="pc-main">
+<div class="pc-kicker">Atenciones del día / OT-024</div>
+<div class="pc-heading"><h2>Entrega y cierre</h2><span class="pc-status pc-green">Listo para entrega</span></div>
+<p class="pc-sub">Lenovo ThinkPad T480 · Camila Soto</p>
+<div class="pc-steps"><span>Recepción registrada</span><span>Trabajo verificado</span><b>Entrega y cierre</b></div>
+<div class="pc-box"><h3>Contacto con el propietario</h3><div class="pc-grid">
+<div class="pc-field"><b>Canal y contacto</b><span class="pc-input">Llamada · +56 9 •••• 0142</span></div>
+<div class="pc-field"><b>Retiro acordado</b><span class="pc-input">Hoy, 16:30 · Mesa de entrega</span></div>
+</div></div>
+<div class="pc-box"><h3>Prueba conjunta</h3><p>El equipo inicia y llega al escritorio en presencia de la propietaria.</p><div class="pc-line"><span class="pc-status pc-green">Prueba realizada con la propietaria</span></div></div>
+<div class="pc-box pc-row"><div class="pc-field"><b>Estado final</b><span class="pc-input">Entregado conforme ▾</span></div><span class="pc-button pc-primary">Cerrar atención</span></div>
+</div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+<section id="cp-permisos" role="tabpanel" aria-labelledby="cp-tab-permisos" hidden>
+<div class="pc-shell">
+<header class="pc-top"><div class="pc-brand"><span class="pc-logo-slot">Logo INACAP</span></div><div class="pc-title">Clínica del PC</div><div class="pc-person"><div><b>Andrea Molina</b><small>Superusuario</small></div><span class="pc-avatar" aria-hidden="true">AM</span></div></header>
+<div class="pc-layout">
+<nav class="pc-side" aria-label="Secciones de Clínica del PC"><strong>Atención de equipos</strong><span>Atenciones del día</span><span>Recepción</span><span>Trabajo técnico</span><span>Entregas</span><span>Historial</span><span class="on" aria-current="page">Roles y permisos</span></nav>
+<div class="pc-main">
+<div class="pc-kicker">Administración</div>
+<div class="pc-heading"><h2>Roles y permisos</h2><span class="pc-button pc-primary">Crear rol</span></div>
+<p class="pc-sub">Configura qué acciones habilita cada rol y asígnalo a las cuentas del equipo.</p>
+<div class="pc-box">
+<h3>Editar rol</h3>
+<div class="pc-grid">
+<div class="pc-field"><b>Nombre del rol</b><span class="pc-input">Apoyo técnico</span></div>
+<div class="pc-field"><b>Seleccionar rol</b><span class="pc-input">Apoyo técnico ▾</span></div>
+</div>
+</div>
+<div class="pc-box">
+<h3>Permisos de Apoyo técnico</h3>
+<div class="pc-grid">
+<span>☑ Consultar atenciones del día</span><span>☑ Confirmar recepción</span>
+<span>☑ Registrar checklist y observaciones</span><span>☑ Verificar funcionamiento</span>
+<span>☐ Coordinar entregas</span><span>☐ Registrar prueba conjunta</span>
+<span>☐ Cerrar atenciones</span><span>☐ Consultar historial</span>
+</div>
+<div class="pc-line pc-row"><span class="pc-muted">☑ Habilitado · ☐ Sin permiso</span><span class="pc-button pc-primary">Guardar permisos</span></div>
+</div>
+<div class="pc-box">
+<h3>Asignar rol a una cuenta</h3>
+<div class="pc-row">
+<div class="pc-field"><b>Cuenta</b><span class="pc-input">Martín Reyes ▾</span></div>
+<div class="pc-field"><b>Rol</b><span class="pc-input">Apoyo técnico ▾</span></div>
+<span class="pc-button">Asignar rol</span>
+</div>
+</div>
+</div>
+</div>
+<footer><span>Sistema de Gestión de la Clínica del PC</span></footer>
+</div>
+</section>
+</div>
+</main>
+<script>
+const tabs = [...document.querySelectorAll('[role="tab"]')]
+function select(tab) {
+  for (const item of tabs) {
+    item.setAttribute('aria-selected', String(item === tab))
+    item.tabIndex = item === tab ? 0 : -1
+    document.getElementById(item.getAttribute('aria-controls')).hidden = item !== tab
+  }
+}
+const initialTab = tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash)
+select(initialTab || tabs[0])
+document.querySelectorAll('[data-preview-tab]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault()
+    const tab = document.getElementById(link.dataset.previewTab)
+    select(tab)
+    tab.focus()
+  })
+})
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => select(tab))
+  tab.addEventListener('keydown', event => {
+    const targets = {ArrowRight:(index+1)%tabs.length,ArrowLeft:(index+tabs.length-1)%tabs.length,Home:0,End:tabs.length-1}
+    if (!Object.hasOwn(targets,event.key)) return
+    event.preventDefault()
+    const target = tabs[targets[event.key]]
+    select(target)
+    target.focus()
+  })
+})
+</script>
+</html>
